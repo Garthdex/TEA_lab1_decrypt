@@ -3,7 +3,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Main {
-    private static final String PATHKEY = "C://ИБ//ЛР1//КАЮ_key.key";
 
     private static void writeToFile(String path, byte[] buffer) {
         try (FileOutputStream fos = new FileOutputStream(path)) {
@@ -13,10 +12,25 @@ public class Main {
         }
     }
 
+    private static void printHelpToConsole() {
+        System.out.println("Вы должны ввести параметры в таком порядке:" + "\n"
+                + "Decrypt-1.jar param1 param2 param3" + "\n"
+                + "где param1 - полный путь к зашифрованному файлу" + "\n"
+                + "пример: C:\\ИБ\\ЛР1\\2.enc" + "\n"
+                + "где param2 - полный путь к записи расшифрованного файла" + "\n"
+                + "пример: C:\\ИБ\\ЛР1\\3.dec" + "\n"
+                + "где param3 - полный путь к файлу ключа" + "\n"
+                + "пример: C:\\ИБ\\ЛР1\\КАЮ_Key.key" + "\n");
+    }
+
     public static void main(String[] args) throws IOException {
+        if (args[0].equals("?")) {
+            printHelpToConsole();
+            return;
+        }
 
         FileInputStream fin1 = new FileInputStream(args[0]);
-        FileInputStream fin2 = new FileInputStream(PATHKEY);
+        FileInputStream fin2 = new FileInputStream(args[2]);
         try {
             byte[] bufferValue = new byte[8];
             byte[] bufferKey = new byte[16];
