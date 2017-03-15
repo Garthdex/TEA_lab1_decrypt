@@ -14,13 +14,13 @@ public class Main {
 
     private static void printHelpToConsole() {
         System.out.println("Вы должны ввести параметры в таком порядке:" + "\n"
-                + "Decrypt-1.jar param1 param2 param3" + "\n"
+                + "decrypt.jar param1 param2 param3" + "\n"
                 + "где param1 - полный путь к зашифрованному файлу" + "\n"
-                + "пример: C:\\ИБ\\ЛР1\\2.enc" + "\n"
+                + "пример: C:/ИБ/ЛР1/1.txt.enc" + "\n"
                 + "где param2 - полный путь к записи расшифрованного файла" + "\n"
-                + "пример: C:\\ИБ\\ЛР1\\3.dec" + "\n"
+                + "пример: C:/ИБ/ЛР1/1.txt.dec" + "\n"
                 + "где param3 - полный путь к файлу ключа" + "\n"
-                + "пример: C:\\ИБ\\ЛР1\\КАЮ_Key.key" + "\n");
+                + "пример: C:/ИБ/ЛР1/Key.key" + "\n");
     }
 
     public static void main(String[] args) throws IOException {
