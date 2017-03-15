@@ -14,7 +14,7 @@ public class Main {
 
     private static void printHelpToConsole() {
         System.out.println("Вы должны ввести параметры в таком порядке:" + "\n"
-                + "decrypt.jar param1 param2 param3" + "\n"
+                + "java -jar decrypt.jar param1 param2 param3" + "\n"
                 + "где param1 - полный путь к зашифрованному файлу" + "\n"
                 + "пример: C:/ИБ/ЛР1/1.txt.enc" + "\n"
                 + "где param2 - полный путь к записи расшифрованного файла" + "\n"
@@ -24,7 +24,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        if (args[0].equals("?")) {
+        if (args.length == 0 || args[0].equals("?")) {
             printHelpToConsole();
             return;
         }
